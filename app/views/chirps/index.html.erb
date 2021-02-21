@@ -1,0 +1,9 @@
+<h1>Chirps</h1>
+
+<ul>
+  <% @chirps.each do |chirp| %>
+  <ul>
+    <a href="/chirps/<%= chirp.id %>"><%= chirp.id %> - <%= chirp.text %>
+  </ul>
+<% end %>
+</ul>

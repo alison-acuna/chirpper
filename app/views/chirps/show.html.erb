@@ -1,0 +1,8 @@
+<h1><%= @chirp.id %></h1>
+<p><%= @chirp.text %></p>
+
+<ul>
+  <li><%= link_to "Destroy", chirp_path(@chirp),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
