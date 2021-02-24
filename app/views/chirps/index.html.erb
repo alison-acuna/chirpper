@@ -1,9 +1,20 @@
 <h1>Chirps</h1>
 
+<h3>All Chirps</h3>
+
 <ul>
-  <% @chirps.each do |chirp| %>
-  <ul>
-    <a href="/chirps/<%= chirp.id %>"><%= chirp.id %> - <%= chirp.text %>
-  </ul>
-<% end %>
+  <% x = @chirps.order(created_at: :desc) %>
+  <% x.each do |chirp| %>
+    <ul>
+      <a href="/chirps/<%= chirp.id %>"><%= chirp.id %> - <%= chirp.text %> - <%= chirp.created_at %></a>
+    </ul>
+  <% end %>
+
+</ul>
+
+
+<h3>Create a New Chirp</h3>
+
+<ul>
+  <ul><%= link_to "New", new_chirp_path(@chirp) %></ul>
 </ul>
