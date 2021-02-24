@@ -17,6 +17,16 @@ RSpec.describe Chirp, type: :model do
       expect(Chirp.find_by_id(13)).to eq(@chirp)
     end
 
+    it 'checks that a chirp can be upvoted' do
+      @chirp.update(:upvote => 14)
+      expect(Chirp.find_by_id(13).upvote).to eq(14)
+    end
+
+    it 'checks that a chirp can be deleted' do
+      @chirp.destroy
+      expect(Chirp.find_by_id(13)).to eq(nil)
+    end
+
     after(:all) do
       @chirp.destroy
     end

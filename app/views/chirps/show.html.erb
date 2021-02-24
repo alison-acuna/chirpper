@@ -1,5 +1,10 @@
 <h1><%= @chirp.id %></h1>
 <p><%= @chirp.text %></p>
+<p><%= @chirp.upvote %></p>
+
+<%= form_with model: @chirp do |form| %>
+    <%= form.submit "+1" %>
+<% end %>
 
 <ul>
   <li><%= link_to "Destroy", chirp_path(@chirp),

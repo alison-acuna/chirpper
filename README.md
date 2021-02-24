@@ -43,8 +43,10 @@ Can I clean up routes.rb
 [DONE] The chirps list displays chirps entirely in UPPER CASE.
 
 
-Allow visitors to upvote chirps.
+[DONE] Allow visitors to upvote chirps.
 - rails generate migration add_votes_to_chirps upvote:integer
+- https://stackoverflow.com/questions/54430420/rails-using-increment-with-user-input
+
 
 After a chirp has been saved to the database, simulate a push notification by making a request.
 This is implemented by sending a properly constructed HTTP request to our push service.
@@ -53,4 +55,3 @@ API Hostname: https://bellbird.joinhandshake-internal.com/push
 JSON payload: { chirp_id: 1234 }
 HTTP Method: POST
 Ensure the API request does not slow down web requests significantly.
-Allow visitors to upvote chirps.

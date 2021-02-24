@@ -16,7 +16,7 @@ class ChirpsController < ApplicationController
     if @chirp.save
       redirect_to @chirp
     else
-      rendew :new
+      render :new
     end
   end
 
@@ -24,9 +24,15 @@ class ChirpsController < ApplicationController
     @chirp = Chirp.find(params[:id])
     @chirp.destroy
     redirect_to root_path
-  end  
+  end
 
   def chirp_params
     params.require(:chirp).permit(:text)
   end
+
+  def update
+    @chirp = Chirp.find(params[:id])
+      @chirp.increment!(:upvote, 1)
+      redirect_to @chirp
+    end  
 end
