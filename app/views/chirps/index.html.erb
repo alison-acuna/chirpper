@@ -6,7 +6,7 @@
   <% x = @chirps.order(created_at: :desc) %>
   <% x.each do |chirp| %>
     <ul>
-      <a href="/chirps/<%= chirp.id %>"><%= chirp.id %> - <%= chirp.text %> - <%= chirp.created_at %></a>
+      <a href="/chirps/<%= chirp.id %>"><%= chirp.text.upcase %></a>
     </ul>
   <% end %>
 
